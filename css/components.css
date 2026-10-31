@@ -1,0 +1,109 @@
+/*Utilities*/
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    display: none !important;
+  }
+
+  /*Buttons*/
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-5);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: var(--text-base);
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.btn--primary {
+    background: var(--success-color);
+    color: var(--background-color);
+}
+
+.btn--secondary {
+
+}
+
+.btn:disabled {
+
+}
+
+/*Forms*/
+.field { /* wrapper: label + input + error */ }
+.label { }
+.input { }
+.input.is-invalid { /* state */ }
+.error-text { }
+.fieldset { /* gruppe med radioknapper */ }
+.radio { /* wrapper for én radioknapp */ }
+
+
+/* Badges*/
+.badge { }
+.badge--discount { /* variant */ }
+.badge--tag { /* variant */ }
+
+
+/*Cards*/
+.card { /* generisk */ }
+.product-card { }
+.product-card__image { }
+.product-card__title { }
+.product-card__price { }
+.product-card__old-price { }
+
+
+/*Rating*/
+.rating { }
+
+
+/*Header*/
+.header { }
+.header__nav { }
+.header__cart-count { }
+
+
+/*Carousel*/
+.carousel { }
+.carousel__track { }
+.carousel__slide { }
+.carousel__prev { }
+.carousel__next { }
+.carousel__indicator { }
+
+
+/*Cart item*/
+.cart-item { }
+.cart-item__image { }
+.cart-item__qty { }
+.cart-item__remove { }
+
+
+/*Empty state*/
+.empty-state { }
+
+
+/*Loading*/
+.spinner { }
+
+
+/*Toast*/
+.toast { }
+.toast.is-visible { }
+
+
+/*Footer*/
+.footer { }
