@@ -8,9 +8,16 @@
     <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-    <header></header>
+    <header class="cluster" ></header>
     <main class="container stack">
         <h1>Produkter</h1>
+        <section class="carousel">
+            <div class="carousel__viewport">
+              <ul id="carousel-track" class="carousel__track"></ul>
+            </div>
+            <button type="button" class="carousel__prev">‹</button>
+            <button type="button" class="carousel__next">›</button>
+          </section>
         <ul id="product-grid" class="grid" role="list"></ul>
       </main>
     <footer></footer>

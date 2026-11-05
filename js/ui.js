@@ -72,12 +72,19 @@ export function showLoading(container, message = "Loading…") {
     return li;
   }
 
-  // HUSK: flytt til auth.js når den finnes
+  export function renderCarouselSlide(product) {
+    const li = document.createElement("li");
+    li.className = "carousel__slide";
+    li.appendChild(renderProductCard(product));
+    return li;
+  }
+
+  // HUSK: flytt til auth.js når den finnes!!
 function isLoggedIn() {
     return Boolean(readJSON(STORAGE_KEYS.token));
   }
   
-  // HUSK: flytt til cart.js når den finnes
+  // HUSK: flytt til cart.js når den finnes!!
   function getCartCount() {
     const items = readJSON(STORAGE_KEYS.cart, []);
     if (!Array.isArray(items)) return 0;
@@ -92,7 +99,7 @@ function isLoggedIn() {
     const cartCount = getCartCount();
   
     header.innerHTML = `
-      <div class="header container">
+      <div class="header__container">
         <a href="${ROUTES.index}" class="header__logo">Shop</a>
         <nav class="header__nav cluster" aria-label="Main menu">
           <a href="${ROUTES.index}">Products</a>
@@ -102,7 +109,7 @@ function isLoggedIn() {
           </a>
           ${
             loggedIn
-              ? `<button type="button" class="btn btn--ghost" data-action="logout">Logg ut</button>`
+              ? `<button type="button" class="btn btn--ghost" data-action="logout">Logg out</button>`
               : `<a href="${ROUTES.login}" class="btn btn--ghost">Sign in</a>`
           }
         </nav>
@@ -112,7 +119,7 @@ function isLoggedIn() {
     const logoutBtn = header.querySelector('[data-action="logout"]');
     if (logoutBtn) {
       logoutBtn.addEventListener("click", () => {
-        // HUSK: bytt til logout() fra auth.js når den finnes
+        // HUSK: bytt til logout() fra auth.js når den finnes !!
         localStorage.removeItem(STORAGE_KEYS.token);
         localStorage.removeItem(STORAGE_KEYS.profile);
         window.location.href = ROUTES.index;
