@@ -11,11 +11,11 @@ export const STORAGE_KEYS = Object.freeze({
 });
 
 export const ROUTES = Object.freeze({
-    index: "/index.html",
-    product: "/product/index.html",
-    login: "/account/login.html",
-    register: "/account/register.html",
-    cart: "/cart/index.html",
-    checkout: "/checkout/index.html",
-    success: "/success/index.html",
+    index: "index.html",
+    product: "product/index.html",
+    login: "account/login.html",
+    register: "account/register.html",
+    cart: "cart/index.html",
+    checkout: "checkout/index.html",
+    success: "success/index.html",
 });
