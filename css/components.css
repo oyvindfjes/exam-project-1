@@ -43,14 +43,39 @@
 }
 
 /*Forms*/
-.field { /* wrapper: label + input + error */ }
-.label { }
-.input { }
-.input.is-invalid { /* state */ }
-.error-text { }
-.fieldset { /* gruppe med radioknapper */ }
-.radio { /* wrapper for én radioknapp */ }
+.field { /
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
 
+.label { 
+    font-weight: 600;
+    font-size: var(--text-small);
+}
+.input { 
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--details-color);
+    border-radius: 10px;
+    background: var(--background-color);
+    font-size: var(--text-base);
+    min-height: 44px;
+}
+
+.input:focus-visible {
+    outline: 2px solid var(--details-color);
+    outline-offset: 1px;
+}
+
+.input.is-invalid {
+    border-color: var(--unavailable-color);
+}
+
+.error-text {
+    color: var(--unavailable-color);
+    font-size: var(--text-small);
+    margin: 0;
+}
 
 /* Badges*/
 .badge { }
@@ -111,6 +136,11 @@
 .carousel__slide { 
     flex: 0 0 100%;
     min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    text-align: center;
 }
 .carousel__prev,
 .carousel__next { 

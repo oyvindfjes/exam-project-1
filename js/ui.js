@@ -1,5 +1,8 @@
-import { ROUTES, STORAGE_KEYS } from "./config.js";
-import { readJSON } from "./storage.js"; //temporary
+// js/ui.js
+
+import { ROUTES } from "./config.js";
+import { isLoggedIn , logout } from "./auth.js";
+import { getCount } from "./pages/cart.js";
 
 const priceFormatter = new Intl.NumberFormat("nb-NO", {
     style: "currency",
@@ -79,24 +82,12 @@ export function showLoading(container, message = "Loading…") {
     return li;
   }
 
-  // HUSK: flytt til auth.js når den finnes!!
-function isLoggedIn() {
-    return Boolean(readJSON(STORAGE_KEYS.token));
-  }
-  
-  // HUSK: flytt til cart.js når den finnes!!
-  function getCartCount() {
-    const items = readJSON(STORAGE_KEYS.cart, []);
-    if (!Array.isArray(items)) return 0;
-    return items.reduce((sum, item) => sum + (item.quantity ?? 1), 0);
-  }
-  
   export function renderHeader() {
     const header = document.querySelector("header");
     if (!header) return;
   
     const loggedIn = isLoggedIn();
-    const cartCount = getCartCount();
+    const cartCount = getCount();
   
     header.innerHTML = `
       <div class="header__container">
@@ -109,7 +100,7 @@ function isLoggedIn() {
           </a>
           ${
             loggedIn
-              ? `<button type="button" class="btn btn--ghost" data-action="logout">Logg out</button>`
+              ? `<button type="button" class="btn btn--ghost" data-action="logout">Sign out</button>`
               : `<a href="${ROUTES.login}" class="btn btn--ghost">Sign in</a>`
           }
         </nav>
@@ -119,9 +110,7 @@ function isLoggedIn() {
     const logoutBtn = header.querySelector('[data-action="logout"]');
     if (logoutBtn) {
       logoutBtn.addEventListener("click", () => {
-        // HUSK: bytt til logout() fra auth.js når den finnes !!
-        localStorage.removeItem(STORAGE_KEYS.token);
-        localStorage.removeItem(STORAGE_KEYS.profile);
+        logout();
         window.location.href = ROUTES.index;
       });
     }

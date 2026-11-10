@@ -1,3 +1,5 @@
+// js/pages/index.js
+
 import { getProducts } from "../api.js";
 import {
   renderHeader,

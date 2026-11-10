@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Login</title>
+    <base href="/">
+    <link rel="stylesheet" href="../css/app.css">
+    <script type="module" src="../js/pages/login.js"></script>
+</head>
+<body>
+    <header></header>
+    <main class="container stack">
+        <h1>Sign in</h1>
+        <form id="login-form" class="stack" novalidate>
+            <div class="field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" class="input" autocomplete="email" required>
+                <p class="error-text" id="email-error" hidden></p>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="input" autocomplete="current-password" required>
+                <p class="error-text" id="password-error" hidden></p>
+            </div>
+            <p class="error-text" id="form-error" hidden></p>
+            <button type="submit" class="btn btn--primary">Sign in</button>
+        </form>
+        <p>No account yet? <a href="account/register.html">Register</a></p>
+    </main>
+    <footer></footer>
+</body>
+</html>

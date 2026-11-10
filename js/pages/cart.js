@@ -1,10 +1,15 @@
-// js/cart.js
+// js/pages/cart.js
 
 import { STORAGE_KEYS } from "../config.js";
 import { readJSON, writeJSON } from "../storage.js";
 
 export function getItems() {
   return readJSON(STORAGE_KEYS.cart, []);
+}
+export function getCount() {
+  const items = getItems();
+  if (!Array.isArray(items)) return 0;
+  return items.reduce((sum, item) => sum + (item.quantity ?? 1), 0);
 }
 
 export function addItem(product) {
@@ -26,3 +31,4 @@ export function addItem(product) {
 
   writeJSON(STORAGE_KEYS.cart, items);
 }
+

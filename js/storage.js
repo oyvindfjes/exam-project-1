@@ -1,3 +1,5 @@
+// js/storage.js
+
 export function readJSON (key,fallback = null) {
     const raw = localStorage.getItem(key);
     if(raw === null) return fallback;
