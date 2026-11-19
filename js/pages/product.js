@@ -3,7 +3,7 @@
 import { getProduct } from "../api.js";
 import { readJSON } from "../storage.js";
 import { STORAGE_KEYS } from "../config.js";
-import { addItem } from "./cart.js";
+import { addItem } from "../cart.js";
 import {
   renderHeader,
   renderFooter,

@@ -2,7 +2,7 @@
 
 import { ROUTES } from "./config.js";
 import { isLoggedIn , logout } from "./auth.js";
-import { getCount } from "./pages/cart.js";
+import { getCount } from "./cart.js";
 
 const priceFormatter = new Intl.NumberFormat("nb-NO", {
     style: "currency",
@@ -59,11 +59,11 @@ export function showLoading(container, message = "Loading…") {
     if (hasDiscount) {
       const old = document.createElement("span");
       old.className = "product-card__old-price";
-      old.textContent = "Before: "+formatPrice(product.price);
+      old.textContent = formatPrice(product.price);
   
       const discounted = document.createElement("span");
       discounted.className = "product-card__discounted-price";
-      discounted.textContent = "Now only: "+formatPrice(product.discountedPrice);
+      discounted.textContent = "Now only "+formatPrice(product.discountedPrice);
   
       priceEl.append(old, discounted);
     } else {
@@ -91,17 +91,17 @@ export function showLoading(container, message = "Loading…") {
   
     header.innerHTML = `
       <div class="header__container">
-        <a href="${ROUTES.index}" class="header__logo">Shop</a>
-        <nav class="header__nav cluster" aria-label="Main menu">
-          <a href="${ROUTES.index}">Products</a>
-          <a href="${ROUTES.cart}" class="header__cart-link">
+        <a href="${ROUTES.index}" class="header__logo btn">amazin</a>
+        <nav class="header__nav">
+          <a href="${ROUTES.index}" class="btn">Products</a>
+          <a href="${ROUTES.cart}" class="header__cart-link btn">
             Cart
-            <span class="header__cart-count">${cartCount}</span>
+            <span class="header__cart-count">[${cartCount}]</span>
           </a>
           ${
             loggedIn
-              ? `<button type="button" class="btn btn--ghost" data-action="logout">Sign out</button>`
-              : `<a href="${ROUTES.login}" class="btn btn--ghost">Sign in</a>`
+              ? `<button type="button" class="btn" id="login__btn" data-action="logout">Sign out</button>`
+              : `<a href="${ROUTES.login}" class="btn">Sign in</a>`
           }
         </nav>
       </div>
@@ -122,7 +122,7 @@ export function showLoading(container, message = "Loading…") {
   
     footer.innerHTML = `
       <div class="footer container">
-        <p>© ${new Date().getFullYear()} Shop</p>
+        <p>© ${new Date().getFullYear()} amazin</p>
       </div>
     `;
   }

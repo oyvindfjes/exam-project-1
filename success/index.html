@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Order Summary</title>
+  <base href="/">
+  <link rel="stylesheet" href="./css/app.css">
+  <script type="module" src="./js/pages/success.js"></script>
 </head>
 <body>
-    
+  <header></header>
+  <main class="container stack">
+    <h1>Thanks for shopping with us!</h1>
+    <p>Your order has been registered.</p>
+
+    <div id="order-summary" class="stack is-hidden">
+      <h2>Order details</h2>
+      <p>Order ID: <span id="order-id"></span></p>
+      <p>Date: <span id="order-date"></span></p>
+      <ul id="order-items" class="stack"></ul>
+      <p><strong>Total: <span id="order-total"></span></strong></p>
+    </div>
+
+    <a href="index.html" class="btn btn--primary">Continue shopping</a>
+  </main>
+  <footer></footer>
 </body>
 </html>

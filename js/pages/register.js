@@ -1,6 +1,4 @@
 // js/pages/register.js
-
-// js/pages/register.js
 import { register } from "../auth.js";
 import { isValidEmail, isValidPassword, isValidName, isNoroffEmail } from "../validation.js";
 import { renderHeader, renderFooter } from "../ui.js";

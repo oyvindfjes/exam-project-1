@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Checkout</title>
+  <base href="/">
+  <link rel="stylesheet" href="./css/app.css">
+  <script type="module" src="./js/pages/checkout.js"></script>
 </head>
 <body>
-    
+  <header></header>
+  <main class="container stack">
+    <h1>Checkout</h1>
+
+    <form id="checkout-form" class="split" novalidate>
+      <div class="stack">
+        <h2>Delivery address</h2>
+
+        <div class="field">
+          <label class="label" for="name">Full name</label>
+          <input class="input" id="name" name="name" type="text" required>
+          <p class="error-text" data-error-for="name"></p>
+        </div>
+
+        <div class="field">
+          <label class="label" for="email">E-mail</label>
+          <input class="input" id="email" name="email" type="email" required>
+          <p class="error-text" data-error-for="email"></p>
+        </div>
+
+        <div class="field">
+          <label class="label" for="address">Address</label>
+          <input class="input" id="address" name="address" type="text" required>
+          <p class="error-text" data-error-for="address"></p>
+        </div>
+
+        <div class="cluster">
+          <div class="field">
+            <label class="label" for="postalCode">Postal code</label>
+            <input class="input" id="postalCode" name="postalCode" type="text" required>
+            <p class="error-text" data-error-for="postalCode"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="city">City</label>
+            <input class="input" id="city" name="city" type="text" required>
+            <p class="error-text" data-error-for="city"></p>
+          </div>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend class="label">Payment method</legend>
+          <label class="radio">
+            <input type="radio" name="payment" value="card" checked>
+            Card
+          </label>
+          <label class="radio">
+            <input type="radio" name="payment" value="vipps">
+            Vipps
+          </label>
+          <label class="radio">
+            <input type="radio" name="payment" value="cash">
+            Pay on delivery
+          </label>
+        </fieldset>
+
+        <button type="submit" class="btn btn--primary">Confirm purchase</button>
+      </div>
+
+      <aside class="stack">
+        <h2>Order summary</h2>
+        <ul id="order-items" class="stack"></ul>
+        <p><strong>Total: <span id="order-total"></span></strong></p>
+      </aside>
+    </form>
+  </main>
+  <footer></footer>
 </body>
 </html>
