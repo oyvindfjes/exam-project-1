@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store - Cart</title>
-    <base href="/">
     <link rel="stylesheet" href="./css/app.css">
     <script type="module" src="./js/pages/cart-page.js"></script>
+    <script>
+        (function () {
+          const repo = "exam-project-1";
+          const base = document.createElement("base");
+          base.href = location.hostname.endsWith("github.io") ? `/${repo}/` : "/";
+          document.head.appendChild(base);
+        })();
+      </script>
 </head>
 <body>
     <header></header>
