@@ -28,12 +28,12 @@ form.addEventListener("submit", async (e) => {
   
     let hasErrors = false;
     if (!isValidEmail(email)) {
-      emailError.textContent = "Email address is invalid.";
+      emailError.textContent = "Please use a valid email address, ending with stud.noroff.no";
       emailError.hidden = false;
       hasErrors = true;
     }
     if (!isValidPassword(password)) {
-      passwordError.textContent = "Password must be at least 8 characters and contain only letters, numbers and underscores.";
+      passwordError.textContent = "Password must be at least 8 characters.";
       passwordError.hidden = false;
       hasErrors = true;
     }
