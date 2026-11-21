@@ -123,24 +123,21 @@
 
 /*Header*/
 
-header {
-    position: sticky;
-}
+
 
 .header__container {
-    display: inline-flex;
+    display: flex;
     text-decoration: none;
     width: 100%;
-    display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 6px;
     background-color: var(--details-color);
   }
   
   .header__nav {
-    width: 25%;
+    
     display: flex; 
-    flex-wrap: wrap; 
+    
     justify-content: space-between;
     gap: var(--space-4); 
   }
@@ -161,6 +158,30 @@ header {
     background-color: var(--details-color);
     border: 2px solid var(--btns-text-color);
 }
+
+@media (max-width: 600px) {
+    .header__container {
+      padding: var(--space-1) 0;
+      gap: 0;
+    }
+  
+    .header__nav {
+        gap: 0;
+    }
+  
+    .header__nav a {
+      font-size: var(--text-small);
+    }
+  
+    .header__logo {
+      font-size: var(--text-base);
+    }
+  
+    #login__btn {
+      padding: var(--space-1);
+      font-size: var(--text-small);
+    }
+  }
 
 
 /*Carousel*/
