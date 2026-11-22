@@ -34,12 +34,12 @@
 }
 
 .btn--primary {
-    background: var(--success-color);
+    background: var(--btn-green);
     color: var(--background-color);
 }
 
 /*Forms*/
-.field { /
+.field {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
@@ -99,7 +99,6 @@
 .product-card__image { 
     border-radius: 10px;
 }
-.product-card__title { }
 
 .product-card__price {
     font-size: var(--text-xl);
@@ -152,7 +151,6 @@
     text-decoration: none;
     font-size: var(--text-xl);
 }
-.header__cart-count { }
 
 #login__btn {
     background-color: var(--details-color);
@@ -243,6 +241,7 @@
 }
 .cart-item__image { 
     max-width: 250px;
+    border-radius: 10px;
 }
 
 /*Footer*/
